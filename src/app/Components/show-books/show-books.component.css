@@ -1,16 +1,14 @@
 .card {
-    displaY: block;
+    display: block;
     float: left;
-    width: 50%;
+    width: 75%;
     margin: auto;
     font-family: 'Calibri';
   }
 
   .card-img-top {
     width: 70%;
-    height: 30%;
-    /*half of width*/
+    height: 50%;
     margin: auto;
     display: block;
-    border-radius: 50px 50px 0 0;
   }

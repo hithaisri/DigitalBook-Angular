@@ -21,6 +21,7 @@ export class SignUpComponent implements OnInit {
       (response: any) => {
         console.log(response);
         alert(response);
+        this.router.navigate(['/login']);
       },
       function(error) {
         console.log(error);
@@ -33,9 +34,7 @@ export class SignUpComponent implements OnInit {
     const observable = this.bookService.userLogin(this.user);
     observable.subscribe(
       (response: any) => {
-        console.log(response);
-     
-        this.router.navigateByUrl('/addBook'); 
+        console.log(response); 
       },
       function(error) {
         console.log(error);

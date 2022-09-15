@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     observable.subscribe(
       (response: any) => {
         console.log(response);
-        this.router.navigateByUrl('/addBook'); 
+        this.router.navigate(['/addbook']);
       },
       function(error) {
         console.log(error);
@@ -28,6 +28,9 @@ export class LoginComponent implements OnInit {
     )
   }
 
+  routcheck(){
+    this.router.navigate(['/showBook']);
+  }
   openModal() {
     this.display = "block";
   }

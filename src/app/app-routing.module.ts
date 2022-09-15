@@ -5,13 +5,15 @@ import { LoginComponent } from './Components/login/login.component';
 import { SearchBooksComponent } from './Components/search-books/search-books.component';
 import { ShowBooksComponent } from './Components/show-books/show-books.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { UpateBookComponent } from './Components/update-book/upate-book.component';
 
 
-const routes: Routes = [{path:"addbook",component:AddbookComponent},
-{path:"signup",component:SignUpComponent},
-{path:"searchBook",component:SearchBooksComponent},
-{path:"login",component:LoginComponent},
-{path:"showBook",component:ShowBooksComponent},
+const routes: Routes = [{path:'signup',component:SignUpComponent},
+{path:'login',component:LoginComponent},
+{path:'searchBook',component:SearchBooksComponent},
+{path:'showBook',component:ShowBooksComponent},
+{path:'addbook',component:AddbookComponent},
+{path:'updateBook',component:UpateBookComponent},
 { path: '', redirectTo: 'login', pathMatch: 'full'}];
 
 @NgModule({

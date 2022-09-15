@@ -11,6 +11,7 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { SearchBooksComponent } from './Components/search-books/search-books.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ShowBooksComponent } from './Components/show-books/show-books.component';
+import { UpateBookComponent } from './Components/update-book/upate-book.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ShowBooksComponent } from './Components/show-books/show-books.component
     SignUpComponent,
     SearchBooksComponent,
     LoginComponent,
-    ShowBooksComponent  ],
+    ShowBooksComponent,
+    UpateBookComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
