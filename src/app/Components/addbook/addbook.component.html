@@ -36,10 +36,26 @@
   </div>
   <br>
   <div class="row sm-3">
+    <label class="col-sm-2 col-form-label">Book Author</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]=book.author placeholder="Book Author"
+        aria-label="Book Author">
+    </div>
+  </div>
+  <br>
+  <div class="row sm-3">
     <label class="col-sm-2 col-form-label">Book Publisher</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" [(ngModel)]=book.publisher placeholder="Book Publisher"
         aria-label="Book Publisher">
+    </div>
+  </div>
+  <br>
+  <div class="row sm-3">
+    <label class="col-sm-2 col-form-label">Book Published Date</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" [(ngModel)]=book.publishedDate placeholder="Book Published Date"
+        aria-label="Book Published Date">
     </div>
   </div>
   <br>

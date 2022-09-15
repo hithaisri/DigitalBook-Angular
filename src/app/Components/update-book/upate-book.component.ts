@@ -28,11 +28,14 @@ export class UpateBookComponent implements OnInit {
     this.book.id = st.id;
     this.book.title = st.title;
     this.book.publisher = st.publisher;
+    this.book.publishedDate=st.publishedDate;
+    this.book.author=st.author;
     this.book.price = st.price;
     this.book.category = st.category;
     this.book.content = st.content;
     this.book.active= st.active;
     this.book.image= st.image;
+  
   }
 
   update(book) {

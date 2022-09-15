@@ -5,12 +5,13 @@
             <tr class="text-center">
                 <th>Book Id</th>
                 <th>Book Title</th>
+                <th>Book Author</th>
                 <th>Book Publisher</th>
+                <th>Book Published Date</th>
                 <th>Book Price</th>
                 <th>Category</th>
                 <th>Content</th>
                 <th>Active</th>
-                <th>Image</th>
                 <th>Actions</th>
 
             </tr>
@@ -19,12 +20,13 @@
             <tr *ngFor="let s of books">
                 <td>{{s.id}}</td>
                 <td>{{s.title}}</td>
+                <td>{{s.author}}</td>
                 <td>{{s.publisher}}</td>
-                <td>{{s.price}}</td>
+                <td>{{s.publishedDate | date:'d/M/yy'}}</td>
+                <td>{{s.price | currency:'INR'}}</td>
                 <td>{{s.category}}</td>
                 <td>{{s.content}}</td>
                 <td>{{s.active}}</td>
-                <td>{{s.image}}</td>
                 <td><a class="btn btn-info" (click)="updateBook(s,s.id)">Update</a></td>
 
             </tr>
@@ -42,39 +44,49 @@
 
 <div class="container">
 
-    <label class="col-sm-2 col-form-label">Enter Book Title</label>
+    <label class="col-sm-2 col-form-label">Edit Book Title</label>
     <div class="col">
         <input type="text" class="form-control" placeholder="Book Title" [(ngModel)]=book.title>
     </div>
     <br>
-    <label class="col-sm-2 col-form-label">Enter Publisher</label>
+    <label class="col-sm-2 col-form-label">Edit Author</label>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Author" [(ngModel)]=book.author>
+    </div>
+    <br>
+    <label class="col-sm-2 col-form-label">Edit Publisher</label>
     <div class="col">
         <input type="text" class="form-control" placeholder="Publisher" [(ngModel)]=book.publisher>
     </div>
     <br>
-    <label class="col-sm-2 col-form-label">Enter Price</label>
+    <label class="col-sm-2 col-form-label">Edit Published Date</label>
+    <div class="col">
+        <input type="date" class="form-control" placeholder="Published Date" [(ngModel)]=book.publishedDate>
+    </div>
+    <br>
+    <label class="col-sm-2 col-form-label">Edit Price</label>
     <div class="col">
         <input type="number" class="form-control" placeholder="Price" [(ngModel)]=book.price>
     </div>
     <br>
-    <label class="col-sm-2 col-form-label">Enter Category</label>
+    <label class="col-sm-2 col-form-label">Edit Category</label>
     <div class="col">
         <input type="test" class="form-control" placeholder="Category" [(ngModel)]=book.category>
     </div>
     <br>
-    <label class="col-sm-2 col-form-label">Enter Content</label>
+    <label class="col-sm-2 col-form-label">Edit Content</label>
     <div class="col">
         <input type="text" class="form-control" placeholder="Content" [(ngModel)]=book.content>
     </div>
     <br>
-    <label class="col-sm-2 col-form-label">Image</label>
+    <label class="col-sm-2 col-form-label">Edit Image</label>
     <div class="col">
         <input type="file" class="form-control" placeholder="Content" [(ngModel)]=book.content>
     </div>
     <br>
     
     <div class="col">
-        <label class="col-sm-2 col-form-label">Book Status</label>
+        <label class="col-sm-2 col-form-label">Edit Book Status</label>
         <input type="radio" class="form-control" placeholder="Content" [(ngModel)]=book.active>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" [(ngModel)]=book.active value=true>
