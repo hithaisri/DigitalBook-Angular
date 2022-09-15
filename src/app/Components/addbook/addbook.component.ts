@@ -16,11 +16,12 @@ book: Book = new Book();
 books: Book[] = [];
 
   save() {
-    const observable = this.bookService.saveBook(this.book)
+    const observable = this.bookService.saveBook(this.book);
     observable.subscribe(
       (response: any) => {
         console.log(response);
         alert(response);
+        window.location.reload();
       },
       function(error) {
         console.log(error);
@@ -29,6 +30,7 @@ books: Book[] = [];
     )
   }
 
+  
   constructor(public bookService: BookService) { }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-
+<!--
 <div class="col">
     <div class="row-auto">
       <input type="text" class="form-control" [(ngModel)] = book.title placeholder="Title" aria-label="Title">
@@ -24,4 +24,59 @@
       <div class="col-12">
         <button type="button" class="btn btn-success" (click)="save()">Submit</button>
       </div>
+</div>
+-->
+
+<div class="col-sm-10 offset-sm-1 ">
+  <div class="row sm-3">
+    <label class="col-sm-2 col-form-label">Book Title</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]=book.title placeholder="Book Title" aria-label="Book Title">
+    </div>
+  </div>
+  <br>
+  <div class="row sm-3">
+    <label class="col-sm-2 col-form-label">Book Publisher</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]=book.publisher placeholder="Book Publisher"
+        aria-label="Book Publisher">
+    </div>
+  </div>
+  <br>
+  <div class="row sm-3">
+    <label class="col-sm-2 col-form-label">Category</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]=book.category placeholder="Category" aria-label="Category">
+    </div>
+  </div>
+    <br>
+    <div class="row sm-3">
+      <label class="col-sm-2 col-form-label">Price</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" [(ngModel)]=book.price placeholder="Price" aria-label="Price">
+      </div>
+    </div>
+    <br>
+    <div class="row sm-3">
+      <label class="col-sm-2 col-form-label">Content</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]=book.content placeholder="Content" aria-label="Content">
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row sm-3">
+      <label for="formFile" class="form-label">Add Image</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="file" id="formFile" [(ngModel)]=book.image placeholder="Image"
+          aria-label="Image">
+      </div>
+    </div>
+    <br>
+
+    <br>
+    <div class="col-12">
+      <button type="button" class="btn btn-success" (click)="save()">Submit</button>
+    </div>
   </div>

@@ -1,0 +1,9 @@
+.logo { 
+    width: 1300px;
+    height: 300px;
+    text-align:center;
+  }
+  
+  .logo img {
+    display:inline-block;
+  } 

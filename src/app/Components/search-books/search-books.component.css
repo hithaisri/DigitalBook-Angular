@@ -1,0 +1,7 @@
+.card {
+    displaY: block;
+    float: left;
+    width: 50%;
+    margin: auto;
+    font-family: 'Calibri';
+  }
