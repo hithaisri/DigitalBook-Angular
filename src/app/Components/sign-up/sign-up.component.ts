@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
       (response: any) => {
         console.log(response);
         alert(response);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
       },
       function(error) {
         console.log(error);

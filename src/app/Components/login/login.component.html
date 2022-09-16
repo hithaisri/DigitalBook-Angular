@@ -13,6 +13,8 @@
     <div class="container-fluid p-2 bg-dark text-white text-center">
         <div class="d-flex justify-content-end mx-4 mb-3 mb-lg-4">
          <button type="button" class="btn btn-info btn-lg" (click)="openModal()">Login</button>
+         <br>
+         <button type="button" class="btn btn-success" routerLink="/signup">Sign Up</button>
         </div>
         <h1>Digital Books</h1>
         <p>Read....Buy....Enjoy!</p>
@@ -40,17 +42,17 @@
             </div>
             <div class="modal-body">
                 <div class="row-auto">
-                    <input type="text" class="form-control" [(ngModel)]=user.email placeholder="Email"
+                    <input type="text" class="form-control" [(ngModel)]=auth.email placeholder="Email"
                         aria-label="Email">
                 </div>
                 <br>
                 <div class="row-auto">
-                    <input type="password" class="form-control" [(ngModel)]=user.password placeholder="Password"
+                    <input type="password" class="form-control" [(ngModel)]=auth.password placeholder="Password"
                         aria-label="Password">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" (click)="loginUser()">Login</button>
+                <button type="button" class="btn btn-success" (click)="checkUserLogin()">Login</button>
                 <button type="button" class="btn btn-secondary" (click)="onCloseHandled()">Close</button>
             </div>
         </div>

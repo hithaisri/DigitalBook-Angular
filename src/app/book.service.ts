@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import Book from './entity/Book';
 import CartItem from './entity/CartItem';
 import { Subject } from 'rxjs';
+import LoginRequest from './entity/LoginRequest';
+import AuthResponse from './entity/AuthResponse';
 
 
 const BASE_URL = 'http://localhost:8080';
@@ -137,6 +139,10 @@ export class BookService {
       this.calculateTotalPrice();
     }
   }
-  
+
+  login(auth:LoginRequest){
+    return this.http.post<AuthResponse>(BASE_URL+"/user/login",auth);
+  }
+
   constructor(public http: HttpClient) { }
 }
