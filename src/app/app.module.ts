@@ -12,6 +12,12 @@ import { SearchBooksComponent } from './Components/search-books/search-books.com
 import { LoginComponent } from './Components/login/login.component';
 import { ShowBooksComponent } from './Components/show-books/show-books.component';
 import { UpateBookComponent } from './Components/update-book/upate-book.component';
+import { AuthorHeaderComponent } from './Components/author-header/author-header.component';
+import { ReaderHeaderComponent } from './Components/reader-header/reader-header.component';
+import { LogoutComponent } from './Components/logout/logout.component';
+import { ShowBooksReaderComponent } from './Components/show-books-reader/show-books-reader.component';
+import { CartDetailsComponent } from './Components/cart-details/cart-details.component';
+import { CheckoutComponent } from './Components/checkout/checkout.component';
 
 
 @NgModule({
@@ -23,7 +29,13 @@ import { UpateBookComponent } from './Components/update-book/upate-book.componen
     SearchBooksComponent,
     LoginComponent,
     ShowBooksComponent,
-    UpateBookComponent  ],
+    UpateBookComponent,
+    AuthorHeaderComponent,
+    ReaderHeaderComponent,
+    LogoutComponent,
+    ShowBooksReaderComponent,
+    CartDetailsComponent,
+    CheckoutComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

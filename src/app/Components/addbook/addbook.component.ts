@@ -16,6 +16,8 @@ book: Book = new Book();
 books: Book[] = [];
 
   save() {
+    let userId=sessionStorage.getItem('userId');
+    this.book.authorId=parseInt(userId);
     const observable = this.bookService.saveBook(this.book);
     observable.subscribe(
       (response: any) => {

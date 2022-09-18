@@ -4,10 +4,11 @@ export default class Book{
     category:string="";
     publisher:string="";
     publishedDate:Date=new Date();
-    author:string="";
+    authorId:number=0;
     price:number=0;
     content:string="";
     image:string="";
     active:boolean=true;
+    author:string="";
    
 }

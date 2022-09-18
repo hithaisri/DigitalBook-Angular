@@ -1,4 +1,4 @@
-
+<br>
 <div class="card" style="width: 20rem;" *ngFor="let s of books;index as i">
     <img src={{s.image}} class="card-img-top" alt="image">
     <div class="card-body">
@@ -7,7 +7,6 @@
       <p class="card-text"><b>Category :</b> {{s.category}}</p>
       <p class="card-text"><b>Content :</b> {{s.content}}</p>
       <p class="card-text"><b>Publisher :</b> {{s.publisher}}</p>
-      <p class="card-text"><b>Author :</b> {{s.author}}</p>
       <p class="card-text"><b>Published Date :</b> {{s.publishedDate | date:'d/M/yy'}}</p>
       <button (click)="addToCart()" class="btn btn-primary ml-1">
         <i class="fas fa-cart-arrow-down"></i> Add to cart

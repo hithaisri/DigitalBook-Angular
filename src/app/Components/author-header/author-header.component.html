@@ -1,0 +1,55 @@
+<header>
+    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+        <img src="https://us.123rf.com/450wm/sergeypykhonin/sergeypykhonin1809/sergeypykhonin180900041/108230283-registration-register-logo-or-label-diary-note-icon-vector-illustration.jpg?ver=6" width="200"
+      height="100" alt="book">
+        <a class="navbar-brand" href="#">DigiBooks</a>
+    
+    <ul class="navbar-nav">
+      <li><a *ngIf="authService.isAuthorLoggedIn()" routerLink="/addbook" class="nav-link">Add Book</a></li>
+      <li><a *ngIf="authService.isAuthorLoggedIn()" routerLink="/updateBook" class="nav-link">Update Book</a></li>
+      <li><a *ngIf="authService.isAuthorLoggedIn()" routerLink="/showBook" class="nav-link">Show Books</a></li>
+      <li><a *ngIf="authService.isReaderLoggedIn()" routerLink="/showBook" class="nav-link">Show Books</a></li>
+      <li><a *ngIf="authService.isReaderLoggedIn()" routerLink="/searchBook" class="nav-link">Search Book</a></li>
+      <li><a *ngIf="authService.isReaderLoggedIn()" routerLink="/cartDetails" class="nav-link">Cart Details</a></li>      
+      <li><a *ngIf="!authService.isUserLoggedIn()" (click)="openModal()" class="nav-link">Login</a></li>
+      <li><a *ngIf="!authService.isUserLoggedIn()" routerLink="/signup" class="nav-link">Sign Up</a></li>
+      <li><a *ngIf="authService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>      
+
+      <li> <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-info" (click)=refresh()><i class="bi bi-arrow-clockwise"></i> Refresh</button>
+    </div> 
+</li> 
+    </ul>
+
+    </nav>
+    
+    </header>
+
+    
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login</h4>
+                <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row-auto">
+                    <input type="text" class="form-control" [(ngModel)]=auth.email placeholder="Email"
+                        aria-label="Email">
+                </div>
+                <br>
+                <div class="row-auto">
+                    <input type="password" class="form-control" [(ngModel)]=auth.password placeholder="Password"
+                        aria-label="Password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="checkUserLogin()">Login</button>
+                <button type="button" class="btn btn-secondary" (click)="onCloseHandled()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

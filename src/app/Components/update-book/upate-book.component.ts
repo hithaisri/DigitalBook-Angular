@@ -13,6 +13,10 @@ export class UpateBookComponent implements OnInit {
   book: Book = new Book();
   id: number = 0;
 
+  refresh(){
+    window.location.reload();
+  }
+
   deleteAllRows() {
     const observable = this.bookService.deleteAllBooks();
     observable.subscribe((response) => {
@@ -29,13 +33,12 @@ export class UpateBookComponent implements OnInit {
     this.book.title = st.title;
     this.book.publisher = st.publisher;
     this.book.publishedDate=st.publishedDate;
-    this.book.author=st.author;
     this.book.price = st.price;
     this.book.category = st.category;
     this.book.content = st.content;
     this.book.active= st.active;
     this.book.image= st.image;
-  
+    this.book.authorId=st.authorId;
   }
 
   update(book) {
@@ -58,7 +61,7 @@ export class UpateBookComponent implements OnInit {
   constructor(public bookService:BookService) { }
 
   ngOnInit(): void {
-    const observable = this.bookService.getBooks();
+    const observable = this.bookService.getBooksByAuthor();
     observable.subscribe((response: any)=>{
       this.books = response as Book[];
     })

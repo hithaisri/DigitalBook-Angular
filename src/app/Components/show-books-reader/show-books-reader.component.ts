@@ -4,23 +4,15 @@ import Book from 'src/app/entity/Book';
 import CartItem from 'src/app/entity/CartItem';
 
 @Component({
-  selector: 'app-show-books',
-  templateUrl: './show-books.component.html',
-  styleUrls: ['./show-books.component.css']
+  selector: 'app-show-books-reader',
+  templateUrl: './show-books-reader.component.html',
+  styleUrls: ['./show-books-reader.component.css']
 })
-export class ShowBooksComponent implements OnInit {
- 
+export class ShowBooksReaderComponent implements OnInit {
+
   books: Book[] = [];
 
   book: Book =new Book();
-
-  deleteRow(book, index) {
-    const observable = this.bookService.deleteBook(book);
-    observable.subscribe((response:any) => {
-      console.log(response);
-      this.books.splice(index,1)
-    })
-  }
 
   addToCart(){
     console.log(`book name: ${this.book.title}, and price: ${this.book.price}`);

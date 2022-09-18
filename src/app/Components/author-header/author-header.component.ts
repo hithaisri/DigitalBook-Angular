@@ -1,40 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/authentication.service';
 import { BookService } from 'src/app/book.service';
 import AuthResponse from 'src/app/entity/AuthResponse';
 import LoginRequest from 'src/app/entity/LoginRequest';
-import User from 'src/app/entity/User';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-author-header',
+  templateUrl: './author-header.component.html',
+  styleUrls: ['./author-header.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class AuthorHeaderComponent implements OnInit {
+ 
   display = "none";
-
-  user: User = new User();
 
   auth:LoginRequest=new LoginRequest();
   loginResponse:AuthResponse=new AuthResponse();
 
-  
-  loginUser(){
-    const observable = this.bookService.userLogin(this.user);
-    observable.subscribe(
-      (response: any) => {
-        console.log(response);
-        this.router.navigate(['/addbook']);
-      },
-      function(error) {
-        console.log(error);
-        alert("Something went wrong please try again!")
-      }
-    )
+  openModal() {
+    this.display = "block";
+  }
+  onCloseHandled() {
+    this.display = "none";
   }
 
+  refresh(){
+    window.location.reload();
+  }
   checkUserLogin(){
     this.bookService.login(this.auth).subscribe(
       resp=>{
@@ -51,7 +42,6 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('role',""+resp.role);
           sessionStorage.setItem('username',resp.user.userName);
           sessionStorage.setItem('userId',""+resp.user.userId);
-
           this.onCloseHandled();
         }
       },
@@ -63,23 +53,16 @@ export class LoginComponent implements OnInit {
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username');
+    let user = sessionStorage.getItem('username')
+    console.log(!(user === null))
     return !(user === null)
   }
 
   logOut() {
-    sessionStorage.removeItem('username');
-  }
- 
-  openModal() {
-    this.display = "block";
-  }
-  onCloseHandled() {
-    this.display = "none";
+    sessionStorage.removeItem('username')
   }
 
-  constructor(public bookService: BookService, private router : Router
-    ,public authService:AuthenticationService) { }
+  constructor(public authService:AuthenticationService,public bookService:BookService) { }
 
   ngOnInit(): void {
   }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/book.service';
 import Book from 'src/app/entity/Book';
+import CartItem from 'src/app/entity/CartItem';
+import SeachBook from 'src/app/entity/SearchBook';
 
 @Component({
   selector: 'app-search-books',
@@ -13,15 +15,23 @@ export class SearchBooksComponent implements OnInit {
   
   book: Book = new Book();
 
+  searchBook: SeachBook=new SeachBook();
 
-  searchBook(){
-    const observable = this.bookService.searchBooks(this.book);
+  searchBooks(){
+    const observable = this.bookService.searchBooks(this.searchBook);
     observable.subscribe((response: any)=>{
       this.books.splice(0);
       console.log(response);
       this.books = response as Book[];
     })
   }
+
+  addToCart(s){
+    console.log(`book name: ${s.title}, and price: ${s.price}`);
+    const cartItem = new CartItem(s);
+    this.bookService.addToCart(cartItem);
+  }
+
 
   constructor(public bookService: BookService) { }
 
