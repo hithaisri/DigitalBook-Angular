@@ -13,11 +13,6 @@ export class CartDetailsComponent implements OnInit {
   totalPrice: number = 0;
   totalQuantity: number = 0;
 
-  constructor(private bookService: BookService) { }
-
-  ngOnInit() {
-    this.cartDetails();
-  }
 
   cartDetails(){
     this.cartItems = this.bookService.cartItems;
@@ -45,8 +40,25 @@ export class CartDetailsComponent implements OnInit {
     this.bookService.remove(cartItem);
   }
 
-  purchase(cartItems: CartItem[]){
-    console.log("purchase works!");
-    this.bookService.purchaseItems(cartItems);
+  purchase(){
+    console.log("ppppppppppurchase works!");
+    for(let i = 0; i < this.cartItems.length; i++){
+      const observable = this.bookService.purchaseItems(this.cartItems[i]);
+      observable.subscribe(
+        (response: any) => {
+          console.log(response);
+          alert(response);
+        },
+        function(error) {
+          console.log(error);
+          alert("Something went wrong please try again!")
+        }
+      )
   }
+}
+constructor(public bookService: BookService) { }
+
+ngOnInit() {
+  this.cartDetails();
+}
 }

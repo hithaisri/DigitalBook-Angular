@@ -18,7 +18,8 @@ import { LogoutComponent } from './Components/logout/logout.component';
 import { ShowBooksReaderComponent } from './Components/show-books-reader/show-books-reader.component';
 import { CartDetailsComponent } from './Components/cart-details/cart-details.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
-
+import { MyBooksComponent } from './Components/my-books/my-books.component';
+import { EllipsisPipe } from './ellipsis.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { CheckoutComponent } from './Components/checkout/checkout.component';
     LogoutComponent,
     ShowBooksReaderComponent,
     CartDetailsComponent,
-    CheckoutComponent  ],
+    CheckoutComponent,
+    MyBooksComponent,
+    EllipsisPipe ],
   imports: [
     BrowserModule,
     AppRoutingModule,

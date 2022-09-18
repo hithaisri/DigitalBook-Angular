@@ -13,17 +13,17 @@ export class ShowBooksReaderComponent implements OnInit {
   books: Book[] = [];
 
   book: Book =new Book();
-
-  addToCart(){
-    console.log(`book name: ${this.book.title}, and price: ${this.book.price}`);
-    const cartItem = new CartItem(this.book);
+  
+  addToCart(s){
+    console.log(`book name: ${s.title}, and price: ${s.price}`);
+    const cartItem = new CartItem(s);
     this.bookService.addToCart(cartItem);
   }
-
+  
   constructor(public bookService: BookService) { }
 
   ngOnInit(): void {
-    const observable = this.bookService.getBooksByAuthor();
+    const observable = this.bookService.getBooks();
     observable.subscribe((response: any)=>{
       this.books = response as Book[];
     })

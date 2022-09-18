@@ -8,7 +8,8 @@
       <li><a *ngIf="authService.isAuthorLoggedIn()" routerLink="/addbook" class="nav-link">Add Book</a></li>
       <li><a *ngIf="authService.isAuthorLoggedIn()" routerLink="/updateBook" class="nav-link">Update Book</a></li>
       <li><a *ngIf="authService.isAuthorLoggedIn()" routerLink="/showBook" class="nav-link">Show Books</a></li>
-      <li><a *ngIf="authService.isReaderLoggedIn()" routerLink="/showBook" class="nav-link">Show Books</a></li>
+      <li><a *ngIf="authService.isReaderLoggedIn()" routerLink="/showBookReader" class="nav-link">Show Books</a></li>
+      <li><a *ngIf="authService.isReaderLoggedIn()" routerLink="/myBooks" class="nav-link">My Books</a></li>
       <li><a *ngIf="authService.isReaderLoggedIn()" routerLink="/searchBook" class="nav-link">Search Book</a></li>
       <li><a *ngIf="authService.isReaderLoggedIn()" routerLink="/cartDetails" class="nav-link">Cart Details</a></li>      
       <li><a *ngIf="!authService.isUserLoggedIn()" (click)="openModal()" class="nav-link">Login</a></li>

@@ -31,39 +31,11 @@
     height: 100%;background-repeat: no-repeat;"></div>
 -->
 <br>
-<h3>About Us</h3>
+
 <p>
-    Welcome to Digi Books.   </p>
+    Welcome to Digi Books. 
+  </p>
 </body>
 
 </html>
 
-
-
-
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Login</h4>
-                <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
-                        aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="row-auto">
-                    <input type="text" class="form-control" [(ngModel)]=auth.email placeholder="Email"
-                        aria-label="Email">
-                </div>
-                <br>
-                <div class="row-auto">
-                    <input type="password" class="form-control" [(ngModel)]=auth.password placeholder="Password"
-                        aria-label="Password">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" (click)="checkUserLogin()">Login</button>
-                <button type="button" class="btn btn-secondary" (click)="onCloseHandled()">Close</button>
-            </div>
-        </div>
-    </div>
-</div>

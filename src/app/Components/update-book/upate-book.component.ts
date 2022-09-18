@@ -61,7 +61,8 @@ export class UpateBookComponent implements OnInit {
   constructor(public bookService:BookService) { }
 
   ngOnInit(): void {
-    const observable = this.bookService.getBooksByAuthor();
+    let authorId=sessionStorage.getItem("userId");
+    const observable = this.bookService.getBooksByAuthor(parseInt(authorId));
     observable.subscribe((response: any)=>{
       this.books = response as Book[];
     })

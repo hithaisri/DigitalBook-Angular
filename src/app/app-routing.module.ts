@@ -6,8 +6,10 @@ import { CartDetailsComponent } from './Components/cart-details/cart-details.com
 import { CheckoutComponent } from './Components/checkout/checkout.component';
 import { LoginComponent } from './Components/login/login.component';
 import { LogoutComponent } from './Components/logout/logout.component';
+import { MyBooksComponent } from './Components/my-books/my-books.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { SearchBooksComponent } from './Components/search-books/search-books.component';
+import { ShowBooksReaderComponent } from './Components/show-books-reader/show-books-reader.component';
 import { ShowBooksComponent } from './Components/show-books/show-books.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { UpateBookComponent } from './Components/update-book/upate-book.component';
@@ -20,6 +22,8 @@ const routes: Routes = [{path:'signup',component:SignUpComponent},
 {path:'logout',component:LogoutComponent},
 {path:'searchBook',component:SearchBooksComponent},
 {path:'showBook',component:ShowBooksComponent},
+{path:'showBookReader',component:ShowBooksReaderComponent},
+{path:'myBooks',component:MyBooksComponent},
 {path:'addbook',component:AddbookComponent},
 {path:'updateBook',component:UpateBookComponent},
 {path:'cartDetails',component:CartDetailsComponent},

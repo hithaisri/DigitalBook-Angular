@@ -1,18 +1,18 @@
 <br>
 <div class="card" style="width: 20rem;" *ngFor="let s of books;index as i">
     <img src={{s.image}} class="card-img-top" alt="image">
+    
     <div class="card-body">
       <h5 class="card-title">{{s.title}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{s.price | currency:'INR'}}</h6>
       <p class="card-text"><b>Category :</b> {{s.category}}</p>
       <p class="card-text"><b>Publisher :</b> {{s.publisher}}</p>
       <p class="card-text"><b>Published Date :</b> {{s.publishedDate | date:'d/M/yy'}}</p>
-      <p class="card-text" (click)="openModal(s.content)"><b>Content :</b> {{s.content | ellipsis}}</p>
-      <p class="btn btn-danger" (click)=deleteRow(s,i)>Delete</p>
+      <p class="card-text" (click)="openModal(s.content)" ><b>Content :</b> {{s.content | ellipsis}}</p>
     </div>
   </div>
 
-  
+
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -30,46 +30,3 @@
         </div>
     </div>
 </div>
-
-<!--
-<table class="table table-striped">
-    <thead class="table-dark">
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Category</th>
-            <th scope="col">Publisher</th>
-            <th scope="col">Price</th>
-            <th scope="col">Content</th>
-            <th scope="col">Image</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr *ngFor="let s of books; index as i">
-            <td>
-                <span>{{s.id}}</span>
-            </td>
-            <td>
-                <span>{{s.title}}</span>
-            </td>
-            <td>
-                <span>{{s.category}}</span>
-            </td>
-            <td>
-                <span>{{s.publisher}}</span>
-            </td>
-            <td>
-                <span>{{s.price}}</span>
-            </td>
-            <td>
-                <span>{{s.content}}</span>
-            </td>
-            <td>
-                <span>{{s.image}}</span>
-            </td>
-        </tr>
-    </tbody>
-
-</table>
--->
