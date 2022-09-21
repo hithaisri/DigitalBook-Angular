@@ -7,8 +7,9 @@
                     <table class="table table-bordered">
                         <thead class="bg-dark text-light">
                             <tr>
-                                <th width="50%">My Cart</th>
+                                <th width="30%">My Cart</th>
                                 <th width="30%"></th>
+                                <th width="40%"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,18 +24,8 @@
                                              <p>Quantity: </p>
                                         </div>
                                         
-                                        <div class="col-md-4">
-                                            <button (click)="decrementQuantity(cartItem)" class="btn btn-primary btn-sm float-right">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-                                        </div>
                                         <div class="col-md-4 text-center">
                                             {{cartItem.quantity}}
-                                        </div>
-                                        <div class="col-md-4">
-                                            <button (click)="incrementQuantity(cartItem)" class="btn btn-primary btn-sm float-left">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
                                         </div>
                                       
                                         <div class="col-md-12 mt-2">
@@ -42,9 +33,7 @@
                                         </div> 
                                     </div>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"></td>
+                                
                                 <td class="font-weight-bold">
                                     <p>Total quantity: {{totalQuantity}}</p>
                                     <p>Shipping: FREE</p>

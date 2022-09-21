@@ -7,8 +7,8 @@ import LoginRequest from './entity/LoginRequest';
 import AuthResponse from './entity/AuthResponse';
 
 
-const BASE_URL = 'http://ec2-34-212-170-227.us-west-2.compute.amazonaws.com:8080';
-const READER_BASE_URL = 'http://localhost:8081';
+const BASE_URL = 'http://ec2-34-208-213-253.us-west-2.compute.amazonaws.com:8080';
+const READER_BASE_URL = 'http://ec2-34-208-213-253.us-west-2.compute.amazonaws.com:8081';
 
 @Injectable({
   providedIn: 'root'
@@ -38,16 +38,11 @@ export class BookService {
   }
 
   getBooks() {
-    return this.http.get(BASE_URL + "/book/getAllBooks");
+    return this.http.get("https://4x03myv7wj.execute-api.us-west-2.amazonaws.com/dev");
   }
 
   getBooksByAuthor(userId) {
     return this.http.get(BASE_URL + "/book/getBooksByAuthor/"+parseInt(userId));
-  }
-
-  getMyBooks() {
-    let readerId=sessionStorage.getItem('userId');
-    return this.http.get(BASE_URL + "/reader/getMyBooks/"+parseInt(readerId));
   }
 
   deleteAllBooks() {
@@ -157,6 +152,11 @@ export class BookService {
     return this.http.post<AuthResponse>(BASE_URL+"/user/login",auth);
   }
 
+  getMyBooks() {
+    let readerId=sessionStorage.getItem('userId');
+    return this.http.get(BASE_URL + "/reader/getMyBooks/"+parseInt(readerId));
+  }
+  
   purchaseItems(cartItem: {
     userId:number;
     unitPrice: number;

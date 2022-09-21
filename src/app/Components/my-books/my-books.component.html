@@ -7,7 +7,7 @@
       <h6 class="card-subtitle mb-2 text-muted">{{s.price | currency:'INR'}}</h6>
       <p class="card-text"><b>Category :</b> {{s.category}}</p>
       <p class="card-text"><b>Publisher :</b> {{s.publisher}}</p>
-      <p class="card-text"><b>Published Date :</b> {{s.publishedDate | date:'d/M/yy'}}</p>
+      <p class="card-text"><b>Published Date :</b> {{s.publishedDate | date:'d/M/yyyy'}}</p>
       <p class="card-text" (click)="openModal(s.content)" ><b>Content :</b> {{s.content | ellipsis}}</p>
     </div>
   </div>

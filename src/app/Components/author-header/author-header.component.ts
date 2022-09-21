@@ -30,6 +30,7 @@ export class AuthorHeaderComponent implements OnInit {
     this.bookService.login(this.auth).subscribe(
       resp=>{
         this.loginResponse=resp;
+        alert(resp.message);
         if(resp.role===1){
           console.log("Author login");
           sessionStorage.setItem('role',""+resp.role);

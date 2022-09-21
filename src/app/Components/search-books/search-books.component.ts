@@ -24,6 +24,7 @@ export class SearchBooksComponent implements OnInit {
       console.log(response);
       this.books = response as Book[];
     })
+    
   }
 
   addToCart(s){
